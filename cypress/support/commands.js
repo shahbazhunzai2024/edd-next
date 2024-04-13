@@ -23,3 +23,14 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('login', (username, password) => {
+    //cy.session([username, password], () =>
+    //{
+    cy.visit('https://eddui--preprod2.sandbox.my.site.com/s/?language=en_US')
+    //cy.get().clear().type(password)
+    //cy.get().click()
+    //}, {cacheAcrossSpecs:true}
+    //)
+})
