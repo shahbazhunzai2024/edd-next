@@ -116,6 +116,7 @@
     "mimic-fn": "^2.1.0",
     "minimist": "^1.2.8",
     "ms": "^2.1.2",
+    "nodemailer": "^6.9.13",
     "npm-run-path": "^4.0.1",
     "object-inspect": "^1.13.1",
     "once": "^1.4.0",

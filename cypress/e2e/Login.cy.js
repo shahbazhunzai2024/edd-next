@@ -1,5 +1,6 @@
 const customPortalTemplate = '#CustomerPortalTemplate';
 const user = require('../fixtures/user.json');
+const nodemailer = require('nodemailer');
 
 describe('Authentication flow', function() {
   beforeEach(() => {
@@ -38,9 +39,14 @@ describe('Authentication flow', function() {
       .should('be.visible');
 
     cy.url().should('include', '/s/');
-    cy.wait(3000)
+    cy.wait(3000);
+
     
-  });
+    });
+    
+    after(() => {
+      cy.sendEmail();
+  });  
 });
 
 
