@@ -1,29 +1,29 @@
-// cypress/integration/email.spec.js
-describe('Sending Email', () => {
-    it('Sends email with attachments', () => {
-    
-        // Visit the page we want to test
-        cy.visit('https://eddui--preprod2.sandbox.my.site.com/s/scplogin');
-        cy.screenshot();
-        // Take more screenshots and/or interact with elements as needed
-        cy.get('.some-element').click();
-        cy.screenshot();
-        cy.sendEmail(); 
-        // Use the Cypress commands to save logs and/or files
-        cy.log('This is a test log message');
-    });
 
-    after(() => {
-        cy.sendEmail({
-            from: 'shahbaz.developer.tech@gmail.com',
-            to: 'shahbaz.khan@cache-cloud.com',
-            subject: 'Eddui Test Results',
-            text: 'Please find attached the test results, screenshots, and logs.',
-            attachments: [
-                { name: 'screenshot.png', path: 'path/to/screenshot.png' },
-                { name: 'logfile.txt', path: 'path/to/logfile.txt' },
-                // Add more attachments as needed
-            ],
-        });
-    });
-});
+// const nodemailer = require('nodemailer');
+
+// // Function to send email
+// function sendEmail() {
+//     const transporter = nodemailer.createTransport({
+//         host: 'localhost', // Localhost
+//         port: 1025, // Port for local testing (e.g., MailDev)
+//         ignoreTLS: true // For testing, ignore TLS certificate
+//     });
+
+//     const mailOptions = {
+//         from: 'your-email@example.com', // Sender address
+//         to: 'recipient@example.com', // List of recipients
+//         subject: 'Cypress Test Report', // Email subject
+//         text: 'Here is the test report from Cypress.' // Plain text body
+//     };
+
+//     transporter.sendMail(mailOptions, function(error, info) {
+//         if (error) {
+//             console.error('Error:', error);
+//         } else {
+//             console.log('Email sent:', info.response);
+//         }
+//     });
+// }
+
+// // Export the function to be used as a custom Cypress command
+// module.exports = sendEmail;

@@ -37,16 +37,23 @@ describe('Authentication flow', function() {
       .find('[type="submit"]')
       .click()
       .should('be.visible');
+      //cy.screenshot()
 
     cy.url().should('include', '/s/');
     cy.wait(3000);
+    cy.screenshot()
 
+    // cy.get(customPortalTemplate)
+    //   .find('.card-body')
+    //   .find('button.edd-btn')
+    //   .first()
+    //   .click()
+    // cy.go('back')
     
     });
-    
-    after(() => {
-      cy.sendEmail();
-  });  
+  //   after(() => {
+  //     cy.sendEmail();
+  // });  
 });
 
 
